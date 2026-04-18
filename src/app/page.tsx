@@ -77,7 +77,7 @@ const previews = [
     title: "Habillage de volant",
     color: "from-zinc-900 to-zinc-800",
     accent: "from-gold-600 to-gold-400",
-    image: "/volant.jpg", // ← mets le nom de ton fichier ici
+    image: "/volant.png", // ← mets le nom de ton fichier ici
   },
   {
     cat: "Extérieur",
