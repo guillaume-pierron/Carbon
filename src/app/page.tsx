@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Layers,
@@ -76,18 +77,21 @@ const previews = [
     title: "Habillage de volant",
     color: "from-zinc-900 to-zinc-800",
     accent: "from-gold-600 to-gold-400",
+    image: "/volant.jpg", // ← mets le nom de ton fichier ici
   },
   {
     cat: "Extérieur",
     title: "Diffuseur arrière",
     color: "from-zinc-900 to-stone-900",
     accent: "from-zinc-500 to-zinc-300",
+    image: null,
   },
   {
     cat: "Custom",
     title: "Manette Xbox",
     color: "from-zinc-900 to-neutral-900",
     accent: "from-gold-500 to-gold-300",
+    image: null,
   },
 ];
 
@@ -253,21 +257,30 @@ export default function HomePage() {
                 <div
                   className={`relative bg-gradient-to-br ${item.color} aspect-[4/3] overflow-hidden group cursor-pointer border border-carbon-800 hover:border-carbon-600 transition-all duration-500`}
                 >
-                  {/* Carbon weave simulation */}
-                  <div className="absolute inset-0 carbon-weave opacity-60" />
+                  {/* Image ou placeholder carbone */}
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 carbon-weave opacity-60" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 border border-white/10 rotate-45 group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-8 h-8 border border-white/5 rotate-45" />
+                      </div>
+                    </>
+                  )}
 
                   {/* Accent gradient overlay */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${item.accent} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                   />
-
-                  {/* Decorative elements */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 border border-white/10 rotate-45 group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-8 h-8 border border-white/5 rotate-45" />
-                  </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-carbon-950/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
