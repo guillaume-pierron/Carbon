@@ -40,7 +40,7 @@ export default function Navigation() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-carbon-950/95 backdrop-blur-sm border-b border-carbon-800"
-          : "bg-transparent"
+          : "bg-transparent border-b border-transparent"
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
