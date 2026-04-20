@@ -81,17 +81,17 @@ const previews = [
   },
   {
     cat: "Extérieur",
-    title: "Diffuseur arrière",
+    title: "Tableau de bord",
     color: "from-zinc-900 to-stone-900",
     accent: "from-zinc-500 to-zinc-300",
-    image: null,
+    image: "/board.png",
   },
   {
     cat: "Custom",
     title: "Manette Xbox",
     color: "from-zinc-900 to-neutral-900",
     accent: "from-gold-500 to-gold-300",
-    image: null,
+    image: "/xbox.png",
   },
   {
     cat: "Custom",
