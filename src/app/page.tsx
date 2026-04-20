@@ -93,6 +93,13 @@ const previews = [
     accent: "from-gold-500 to-gold-300",
     image: null,
   },
+  {
+    cat: "Custom",
+    title: "Boîte sur-mesure",
+    color: "from-zinc-900 to-zinc-800",
+    accent: "from-gold-600 to-gold-400",
+    image: "/boite.png",
+  },
 ];
 
 export default function HomePage() {
@@ -251,7 +258,7 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {previews.map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 120}>
                 <div
