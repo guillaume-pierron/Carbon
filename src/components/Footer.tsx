@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="mb-4">
               <Image
                 src="/logo.svg"
-                alt="BB Carbon"
+                alt="B&B Carbon"
                 width={120}
                 height={48}
                 className="h-12 w-auto object-contain"
@@ -142,7 +142,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-carbon-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-carbon-500 tracking-wide">
-            © {new Date().getFullYear()} BB Carbon. Tous droits réservés.
+            © {new Date().getFullYear()} B&B Carbon. Tous droits réservés.
           </p>
           <p className="text-xs text-carbon-600">
             Fabrication artisanale · Qualité premium · Sur-mesure

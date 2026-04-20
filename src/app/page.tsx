@@ -14,9 +14,9 @@ import {
 import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "BB Carbon — Pièces en Fibre de Carbone Sur-Mesure",
+  title: "B&B Carbon — Pièces en Fibre de Carbone Sur-Mesure",
   description:
-    "BB Carbon fabrique des pièces en fibre de carbone sur-mesure pour l'intérieur et l'extérieur automobile. Création, réparation et recouvrement carbone.",
+    "B&B Carbon fabrique des pièces en fibre de carbone sur-mesure pour l'intérieur et l'extérieur automobile. Création, réparation et recouvrement carbone.",
 };
 
 const services = [
@@ -328,7 +328,7 @@ export default function HomePage() {
             <AnimatedSection direction="left">
               <div>
                 <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-3 block">
-                  Pourquoi BB Carbon
+                  Pourquoi B&B Carbon
                 </span>
                 <h2 className="section-title text-white mb-6">
                   L'excellence
@@ -338,7 +338,7 @@ export default function HomePage() {
                   au service de votre vision
                 </h2>
                 <p className="text-carbon-400 leading-relaxed mb-8">
-                  Chez BB Carbon, chaque projet est abordé comme une œuvre
+                  Chez B&B Carbon, chaque projet est abordé comme une œuvre
                   unique. Nous combinons techniques de fabrication professionnelles
                   et attention au détail pour livrer des pièces qui dépassent les
                   attentes.

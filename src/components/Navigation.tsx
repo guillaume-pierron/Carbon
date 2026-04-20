@@ -54,7 +54,7 @@ export default function Navigation() {
             <Link href="/" className="flex items-center group">
               <Image
                 src="/logo.svg"
-                alt="BB Carbon"
+                alt="B&B Carbon"
                 width={120}
                 height={48}
                 className="h-10 md:h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"

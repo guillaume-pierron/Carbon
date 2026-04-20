@@ -13,7 +13,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Découvrez tous les services BB Carbon : création sur-mesure, recouvrement carbone, réparation de pièces et objets custom. Expertise artisanale pour votre automobile.",
+    "Découvrez tous les services B&B Carbon : création sur-mesure, recouvrement carbone, réparation de pièces et objets custom. Expertise artisanale pour votre automobile.",
 };
 
 const services = [
@@ -81,7 +81,7 @@ const services = [
     title: "Objets Custom",
     subtitle: "Le carbone au-delà de l'automobile",
     description:
-      "BB Carbon ne se limite pas à l'automobile. Nous réalisons des recouvrements et créations carbone sur tous types d'objets — manettes, accessoires hi-tech, objets décoratifs et plus encore.",
+      "B&B Carbon ne se limite pas à l'automobile. Nous réalisons des recouvrements et créations carbone sur tous types d'objets — manettes, accessoires hi-tech, objets décoratifs et plus encore.",
     features: [
       "Manettes de gaming (Xbox, PS5...)",
       "Casques et équipements moto",
@@ -138,7 +138,7 @@ export default function ServicesPage() {
             </h1>
             <p className="section-subtitle text-carbon-400">
               De la création pure à la réparation, en passant par le recouvrement
-              et le custom — BB Carbon couvre tous vos besoins en fibre de carbone.
+              et le custom — B&B Carbon couvre tous vos besoins en fibre de carbone.
             </p>
           </AnimatedSection>
         </div>

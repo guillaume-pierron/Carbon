@@ -14,7 +14,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 export const metadata: Metadata = {
   title: "À Propos",
   description:
-    "Découvrez l'histoire de BB Carbon, atelier artisanal spécialisé dans la fabrication de pièces en fibre de carbone sur-mesure pour l'automobile.",
+    "Découvrez l'histoire de B&B Carbon, atelier artisanal spécialisé dans la fabrication de pièces en fibre de carbone sur-mesure pour l'automobile.",
 };
 
 const values = [
@@ -36,7 +36,7 @@ const values = [
   {
     icon: Users,
     title: "Relation client directe",
-    desc: "Chez BB Carbon, vous travaillez directement avec l'artisan. Communication transparente, suivi personnalisé, résultat conforme à vos attentes.",
+    desc: "Chez B&B Carbon, vous travaillez directement avec l'artisan. Communication transparente, suivi personnalisé, résultat conforme à vos attentes.",
   },
 ];
 
@@ -61,10 +61,10 @@ export default function AProposPage() {
               Notre Histoire
             </span>
             <h1 className="section-title text-white mb-6">
-              L'atelier <span className="text-gradient-gold">BB Carbon</span>
+              L'atelier <span className="text-gradient-gold">B&B Carbon</span>
             </h1>
             <p className="section-subtitle text-carbon-400">
-              Né d'une passion pour l'automobile et la fabrication, BB Carbon
+              Né d'une passion pour l'automobile et la fabrication, B&B Carbon
               s'est imposé comme une référence dans la création de pièces
               carbone artisanales.
             </p>
@@ -79,7 +79,7 @@ export default function AProposPage() {
             <AnimatedSection direction="left">
               <div className="space-y-6 text-carbon-300 leading-relaxed">
                 <p className="text-lg text-white">
-                  BB Carbon est né d'une double passion : l'automobile haute
+                  B&B Carbon est né d'une double passion : l'automobile haute
                   performance et l'artisanat de précision.
                 </p>
                 <p>
@@ -144,7 +144,7 @@ export default function AProposPage() {
                       créer quelque chose d'exceptionnel.&rdquo;
                     </blockquote>
                     <div className="mt-6 text-xs tracking-widest uppercase text-gold-500">
-                      — BB Carbon
+                      — B&B Carbon
                     </div>
                   </div>
                 </div>
