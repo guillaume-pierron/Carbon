@@ -121,12 +121,11 @@ export default function Navigation() {
       {/* Mobile Menu */}
       <div
         className={clsx(
-          "md:hidden fixed inset-0 top-16 bg-carbon-950/98 backdrop-blur-md transition-all duration-300 z-40",
+          "md:hidden fixed inset-0 top-16 bg-carbon-950 transition-all duration-300 z-40",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
-        <div className="carbon-texture absolute inset-0 opacity-50" />
-        <div className="relative flex flex-col p-8 gap-6">
+        <div className="flex flex-col p-8 gap-6">
           {navLinks.map((link, i) => (
             <Link
               key={link.href}
