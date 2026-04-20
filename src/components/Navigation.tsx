@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { clsx } from "clsx";
 import { useCart } from "@/context/CartContext";
@@ -49,21 +50,15 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-8 h-8 bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center">
-                <span className="text-carbon-950 font-black text-xs tracking-widest">BB</span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div>
-              <span className="font-bold text-lg tracking-[0.15em] text-white uppercase">
-                BB
-              </span>
-              <span className="font-light text-lg tracking-[0.15em] text-gradient-gold uppercase ml-1">
-                Carbon
-              </span>
-            </div>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="BB Carbon"
+              width={120}
+              height={48}
+              className="h-10 md:h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
+              priority
+            />
           </Link>
 
           {/* Desktop Links */}
