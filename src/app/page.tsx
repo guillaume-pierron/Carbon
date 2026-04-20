@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Layers,
@@ -76,18 +77,28 @@ const previews = [
     title: "Habillage de volant",
     color: "from-zinc-900 to-zinc-800",
     accent: "from-gold-600 to-gold-400",
+    image: "/volant.png", // ← mets le nom de ton fichier ici
   },
   {
     cat: "Extérieur",
-    title: "Diffuseur arrière",
+    title: "Tableau de bord",
     color: "from-zinc-900 to-stone-900",
     accent: "from-zinc-500 to-zinc-300",
+    image: "/board.png",
   },
   {
     cat: "Custom",
     title: "Manette Xbox",
     color: "from-zinc-900 to-neutral-900",
     accent: "from-gold-500 to-gold-300",
+    image: "/xbox.png",
+  },
+  {
+    cat: "Custom",
+    title: "Boîte sur-mesure",
+    color: "from-zinc-900 to-zinc-800",
+    accent: "from-gold-600 to-gold-400",
+    image: "/boite.png",
   },
 ];
 
@@ -155,12 +166,12 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
 
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-carbon-500">
-            <span className="text-xs tracking-widest uppercase">Découvrir</span>
-            <div className="w-px h-12 bg-gradient-to-b from-carbon-500 to-transparent animate-pulse" />
-          </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-carbon-500">
+          <span className="text-xs tracking-widest uppercase">Découvrir</span>
+          <div className="w-px h-12 bg-gradient-to-b from-carbon-500 to-transparent animate-pulse" />
         </div>
       </section>
 
@@ -247,27 +258,36 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {previews.map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 120}>
                 <div
                   className={`relative bg-gradient-to-br ${item.color} aspect-[4/3] overflow-hidden group cursor-pointer border border-carbon-800 hover:border-carbon-600 transition-all duration-500`}
                 >
-                  {/* Carbon weave simulation */}
-                  <div className="absolute inset-0 carbon-weave opacity-60" />
+                  {/* Image ou placeholder carbone */}
+                  {item.image ? (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 carbon-weave opacity-60" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 border border-white/10 rotate-45 group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-8 h-8 border border-white/5 rotate-45" />
+                      </div>
+                    </>
+                  )}
 
                   {/* Accent gradient overlay */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${item.accent} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                   />
-
-                  {/* Decorative elements */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 border border-white/10 rotate-45 group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-8 h-8 border border-white/5 rotate-45" />
-                  </div>
 
                   <div className="absolute inset-0 bg-gradient-to-t from-carbon-950/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
