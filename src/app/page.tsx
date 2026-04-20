@@ -159,12 +159,12 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
 
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-carbon-500">
-            <span className="text-xs tracking-widest uppercase">Découvrir</span>
-            <div className="w-px h-12 bg-gradient-to-b from-carbon-500 to-transparent animate-pulse" />
-          </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-carbon-500">
+          <span className="text-xs tracking-widest uppercase">Découvrir</span>
+          <div className="w-px h-12 bg-gradient-to-b from-carbon-500 to-transparent animate-pulse" />
         </div>
       </section>
 
