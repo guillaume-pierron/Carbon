@@ -37,7 +37,7 @@ export default function Navigation() {
   return (
     <header
       className={clsx(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500 [transform:translateZ(0)]",
         scrolled
           ? "bg-carbon-950/95 backdrop-blur-sm border-b border-carbon-800"
           : "bg-transparent border-b border-transparent"
