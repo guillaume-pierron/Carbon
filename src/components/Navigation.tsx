@@ -3,13 +3,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { clsx } from "clsx";
+import { useCart } from "@/context/CartContext";
 
 const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/services", label: "Services" },
   { href: "/realisations", label: "Réalisations" },
+  { href: "/boutique", label: "Boutique" },
   { href: "/a-propos", label: "À Propos" },
   { href: "/contact", label: "Devis" },
 ];
@@ -18,6 +20,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { count, open: openCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -87,6 +90,18 @@ export default function Navigation() {
                 />
               </Link>
             ))}
+            <button
+              onClick={openCart}
+              className="relative p-2 text-carbon-300 hover:text-white transition-colors"
+              aria-label="Panier"
+            >
+              <ShoppingBag size={20} />
+              {count > 0 && (
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-gold-500 text-carbon-950 text-[10px] font-black flex items-center justify-center rounded-full">
+                  {count}
+                </span>
+              )}
+            </button>
             <Link href="/contact" className="btn-primary !py-2 !px-6 !text-xs">
               Devis Gratuit
             </Link>
