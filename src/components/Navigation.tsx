@@ -121,7 +121,7 @@ export default function Navigation() {
       {/* Mobile Menu */}
       <div
         className={clsx(
-          "md:hidden fixed inset-0 top-16 bg-carbon-950 transition-all duration-300 z-40",
+          "md:hidden fixed inset-0 top-16 bg-carbon-950/90 backdrop-blur-2xl transition-all duration-300 z-40",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
