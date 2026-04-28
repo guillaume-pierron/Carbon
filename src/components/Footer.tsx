@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 const footerLinks = {
@@ -40,14 +41,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center">
-                <span className="text-carbon-950 font-black text-xs tracking-widest">BB</span>
-              </div>
-              <div>
-                <span className="font-bold text-lg tracking-[0.15em] text-white uppercase">BB</span>
-                <span className="font-light text-lg tracking-[0.15em] text-gradient-gold uppercase ml-1">Carbon</span>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/logo.svg"
+                alt="B&B Carbon"
+                width={120}
+                height={48}
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-carbon-400 text-sm leading-relaxed max-w-xs mb-6">
               Fabrication artisanale de pièces en fibre de carbone sur-mesure.
@@ -141,7 +142,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-carbon-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-carbon-500 tracking-wide">
-            © {new Date().getFullYear()} BB Carbon. Tous droits réservés.
+            © {new Date().getFullYear()} B&B Carbon. Tous droits réservés.
           </p>
           <p className="text-xs text-carbon-600">
             Fabrication artisanale · Qualité premium · Sur-mesure

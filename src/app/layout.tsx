@@ -13,11 +13,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "BB Carbon — Pièces en Fibre de Carbone Sur-Mesure",
-    template: "%s | BB Carbon",
+    default: "B&B Carbon — Pièces en Fibre de Carbone Sur-Mesure",
+    template: "%s | B&B Carbon",
   },
   description:
-    "BB Carbon fabrique des pièces en fibre de carbone sur-mesure pour l'intérieur et l'extérieur automobile. Création, réparation et recouvrement carbone haut de gamme.",
+    "B&B Carbon fabrique des pièces en fibre de carbone sur-mesure pour l'intérieur et l'extérieur automobile. Création, réparation et recouvrement carbone haut de gamme.",
   keywords: [
     "fibre de carbone",
     "carbone sur-mesure",
@@ -27,23 +27,23 @@ export const metadata: Metadata = {
     "pièces intérieur carbone",
     "extérieur carbone",
     "tuning carbone",
-    "BB Carbon",
+    "B&B Carbon",
     "carbon fiber",
   ],
-  authors: [{ name: "BB Carbon" }],
-  creator: "BB Carbon",
+  authors: [{ name: "B&B Carbon" }],
+  creator: "B&B Carbon",
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://bbcarbon.fr",
-    siteName: "BB Carbon",
-    title: "BB Carbon — Pièces en Fibre de Carbone Sur-Mesure",
+    siteName: "B&B Carbon",
+    title: "B&B Carbon — Pièces en Fibre de Carbone Sur-Mesure",
     description:
       "Fabricant de pièces en fibre de carbone sur-mesure pour automobiles. Expertise artisanale, qualité premium.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BB Carbon — Pièces en Fibre de Carbone Sur-Mesure",
+    title: "B&B Carbon — Pièces en Fibre de Carbone Sur-Mesure",
     description:
       "Fabricant de pièces en fibre de carbone sur-mesure pour automobiles.",
   },
