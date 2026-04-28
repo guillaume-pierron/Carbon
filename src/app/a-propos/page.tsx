@@ -51,19 +51,16 @@ export default function AProposPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 carbon-texture" />
-        <div className="absolute inset-0 bg-gradient-to-b from-carbon-950/60 to-carbon-950" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-4 block">
               Notre Histoire
             </span>
-            <h1 className="section-title text-white mb-6">
+            <h1 className="section-title text-zinc-900 mb-6">
               L'atelier <span className="text-gradient-gold">B&B Carbon</span>
             </h1>
-            <p className="section-subtitle text-carbon-400">
+            <p className="section-subtitle">
               Né d'une passion pour l'automobile et la fabrication, B&B Carbon
               s'est imposé comme une référence dans la création de pièces
               carbone artisanales.
@@ -73,12 +70,12 @@ export default function AProposPage() {
       </section>
 
       {/* Story */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <AnimatedSection direction="left">
-              <div className="space-y-6 text-carbon-300 leading-relaxed">
-                <p className="text-lg text-white">
+              <div className="space-y-6 text-gray-600 leading-relaxed">
+                <p className="text-lg text-zinc-900">
                   B&B Carbon est né d'une double passion : l'automobile haute
                   performance et l'artisanat de précision.
                 </p>
@@ -110,11 +107,11 @@ export default function AProposPage() {
                   { val: "100%", label: "satisfaction client" },
                   { val: "48h", label: "délai devis" },
                 ].map((s) => (
-                  <div key={s.label} className="border border-carbon-800 p-4">
+                  <div key={s.label} className="border border-gray-200 p-4 bg-gray-50">
                     <div className="text-2xl font-black text-gradient-gold">
                       {s.val}
                     </div>
-                    <div className="text-xs text-carbon-500 tracking-wide mt-1">
+                    <div className="text-xs text-gray-400 tracking-wide mt-1">
                       {s.label}
                     </div>
                   </div>
@@ -123,22 +120,21 @@ export default function AProposPage() {
             </AnimatedSection>
 
             <AnimatedSection direction="right">
-              {/* Visual block */}
               <div className="relative">
-                <div className="aspect-square bg-carbon-900 border border-carbon-800 relative overflow-hidden">
-                  <div className="absolute inset-0 carbon-weave" />
+                <div className="aspect-square bg-gray-100 border border-gray-200 relative overflow-hidden">
+                  <div className="absolute inset-0 carbon-weave opacity-60" />
                   <div
-                    className="absolute inset-0 opacity-20"
+                    className="absolute inset-0 opacity-10"
                     style={{
                       background:
-                        "radial-gradient(circle at 30% 70%, #c9a84c 0%, transparent 60%)",
+                        "radial-gradient(circle at 30% 70%, #0f172a 0%, transparent 60%)",
                     }}
                   />
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center">
-                    <div className="w-16 h-16 border border-gold-500/50 flex items-center justify-center mb-6">
-                      <Hammer size={28} className="text-gold-400" />
+                    <div className="w-16 h-16 border border-gold-500/40 flex items-center justify-center mb-6">
+                      <Hammer size={28} className="text-gold-500" />
                     </div>
-                    <blockquote className="text-lg font-light text-white leading-relaxed italic">
+                    <blockquote className="text-lg font-light text-zinc-900 leading-relaxed italic">
                       &ldquo;Chaque pièce carbone est une conversation entre le
                       matériau et l'artisan. Notre rôle est de l'écouter pour
                       créer quelque chose d'exceptionnel.&rdquo;
@@ -150,12 +146,12 @@ export default function AProposPage() {
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -right-4 bg-carbon-950 border border-gold-500/30 p-5">
-                  <Award size={24} className="text-gold-400 mb-2" />
-                  <div className="text-xs font-bold text-white tracking-wide">
+                <div className="absolute -bottom-4 -right-4 bg-white border border-gray-200 p-5 shadow-lg">
+                  <Award size={24} className="text-gold-500 mb-2" />
+                  <div className="text-xs font-bold text-zinc-900 tracking-wide">
                     Fabrication
                   </div>
-                  <div className="text-xs text-carbon-400">Artisanale</div>
+                  <div className="text-xs text-gray-400">Artisanale</div>
                 </div>
               </div>
             </AnimatedSection>
@@ -164,28 +160,28 @@ export default function AProposPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-carbon-900/40 border-y border-carbon-800">
+      <section className="py-24 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
               <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-3 block">
                 Nos Valeurs
               </span>
-              <h2 className="section-title text-white">
+              <h2 className="section-title text-zinc-900">
                 Ce qui nous <span className="text-gradient-gold">définit</span>
               </h2>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-carbon-800">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
             {values.map((val, i) => (
               <AnimatedSection key={val.title} delay={i * 100}>
-                <div className="bg-carbon-950 p-8 h-full group hover:bg-carbon-900 transition-colors">
+                <div className="bg-white p-8 h-full group hover:bg-gray-50 transition-colors">
                   <div className="w-12 h-12 border border-gold-500/30 flex items-center justify-center mb-6 group-hover:border-gold-400 transition-colors">
                     <val.icon size={20} className="text-gold-500" />
                   </div>
-                  <h3 className="font-semibold text-white mb-3">{val.title}</h3>
-                  <p className="text-sm text-carbon-400 leading-relaxed">{val.desc}</p>
+                  <h3 className="font-semibold text-zinc-900 mb-3">{val.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{val.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -194,18 +190,18 @@ export default function AProposPage() {
       </section>
 
       {/* Expertise */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
               <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-3 block">
                 Maîtrise Technique
               </span>
-              <h2 className="section-title text-white mb-6">
+              <h2 className="section-title text-zinc-900 mb-6">
                 Une expertise{" "}
                 <span className="text-gradient-gold">complète</span>
               </h2>
-              <p className="text-carbon-400 leading-relaxed mb-8">
+              <p className="text-gray-600 leading-relaxed mb-8">
                 La fibre de carbone est un matériau exigeant qui ne pardonne
                 pas les approximations. Notre maîtrise technique couvre
                 l'ensemble du processus, de la préparation des moules à la
@@ -215,14 +211,14 @@ export default function AProposPage() {
                 {expertise.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center gap-4 border-b border-carbon-800 pb-4 last:border-0"
+                    className="flex items-center gap-4 border-b border-gray-200 pb-4 last:border-0"
                   >
                     <div className="w-2 h-2 bg-gold-500 shrink-0" />
                     <div>
-                      <span className="text-sm font-semibold text-white mr-2">
+                      <span className="text-sm font-semibold text-zinc-900 mr-2">
                         {item.label} :
                       </span>
-                      <span className="text-sm text-carbon-400">{item.desc}</span>
+                      <span className="text-sm text-gray-500">{item.desc}</span>
                     </div>
                   </div>
                 ))}
@@ -239,13 +235,13 @@ export default function AProposPage() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="border border-carbon-800 bg-carbon-900 p-6 flex flex-col items-center text-center gap-3 hover:border-carbon-700 transition-colors group"
+                    className="border border-gray-200 bg-gray-50 p-6 flex flex-col items-center text-center gap-3 hover:border-gray-300 hover:bg-white transition-colors group"
                   >
                     <item.icon
                       size={24}
-                      className="text-gold-500 group-hover:text-gold-300 transition-colors"
+                      className="text-gold-500 group-hover:text-gold-600 transition-colors"
                     />
-                    <span className="text-sm font-medium text-carbon-300">
+                    <span className="text-sm font-medium text-gray-600">
                       {item.label}
                     </span>
                   </div>
@@ -257,13 +253,13 @@ export default function AProposPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 border-t border-carbon-800">
+      <section className="py-20 border-t border-gray-200 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl font-bold text-zinc-900 mb-4">
               Travaillons ensemble
             </h2>
-            <p className="text-carbon-400 mb-8">
+            <p className="text-gray-500 mb-8">
               Votre projet mérite une attention artisanale. Contactez-nous pour
               discuter de votre idée.
             </p>

@@ -41,19 +41,14 @@ export default function Navigation() {
   return (
     <>
       <header
-        className={clsx(
-          "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500",
-          scrolled
-            ? "bg-carbon-950/95 backdrop-blur-sm border-b border-carbon-800"
-            : "bg-transparent border-b border-transparent"
-        )}
+        className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200"
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
               <Image
-                src="/logo.svg"
+                src="/logo_noir.svg"
                 alt="B&B Carbon"
                 width={120}
                 height={48}
@@ -71,8 +66,8 @@ export default function Navigation() {
                   className={clsx(
                     "text-xs tracking-widest uppercase font-medium transition-colors duration-200 relative group",
                     pathname === link.href
-                      ? "text-gold-400"
-                      : "text-carbon-300 hover:text-white"
+                      ? "text-gold-600"
+                      : "text-carbon-700 hover:text-carbon-950"
                   )}
                 >
                   {link.label}
@@ -86,7 +81,7 @@ export default function Navigation() {
               ))}
               <button
                 onClick={openCart}
-                className="relative p-2 text-carbon-300 hover:text-white transition-colors"
+                className="relative p-2 text-carbon-600 hover:text-carbon-950 transition-colors"
                 aria-label="Panier"
               >
                 <ShoppingBag size={20} />
@@ -104,7 +99,7 @@ export default function Navigation() {
             {/* Mobile Toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-carbon-300 hover:text-white transition-colors"
+              className="md:hidden p-2 text-carbon-600 hover:text-carbon-950 transition-colors"
               aria-label="Menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}

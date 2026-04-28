@@ -59,20 +59,17 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 carbon-texture" />
-        <div className="absolute inset-0 bg-gradient-to-b from-carbon-950/60 to-carbon-950" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-4 block">
               Devis Gratuit
             </span>
-            <h1 className="section-title text-white mb-6">
+            <h1 className="section-title text-zinc-900 mb-6">
               Démarrons votre{" "}
               <span className="text-gradient-gold">projet</span>
             </h1>
-            <p className="section-subtitle text-carbon-400">
+            <p className="section-subtitle">
               Remplissez le formulaire ci-dessous. Plus vous nous donnez de
               détails, plus notre devis sera précis. Réponse garantie sous 48h.
             </p>
@@ -81,15 +78,15 @@ export default function ContactPage() {
       </section>
 
       {/* Main content */}
-      <section className="py-12 pb-24">
+      <section className="py-12 pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Sidebar */}
             <aside className="lg:col-span-1 space-y-8">
               <AnimatedSection direction="left">
                 {/* Contact info */}
-                <div className="bg-carbon-900 border border-carbon-800 p-6">
-                  <h2 className="text-xs font-semibold tracking-widest uppercase text-carbon-400 mb-5">
+                <div className="bg-gray-50 border border-gray-200 p-6">
+                  <h2 className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-5">
                     Nous contacter
                   </h2>
                   <ul className="space-y-4">
@@ -99,18 +96,18 @@ export default function ContactPage() {
                           <item.icon size={14} className="text-gold-500" />
                         </div>
                         <div>
-                          <p className="text-xs text-carbon-500 mb-0.5">
+                          <p className="text-xs text-gray-400 mb-0.5">
                             {item.label}
                           </p>
                           {item.href ? (
                             <a
                               href={item.href}
-                              className="text-sm text-carbon-200 hover:text-gold-400 transition-colors"
+                              className="text-sm text-zinc-900 hover:text-gold-600 transition-colors"
                             >
                               {item.value}
                             </a>
                           ) : (
-                            <span className="text-sm text-carbon-200">
+                            <span className="text-sm text-zinc-900">
                               {item.value}
                             </span>
                           )}
@@ -121,8 +118,8 @@ export default function ContactPage() {
                 </div>
 
                 {/* Why us */}
-                <div className="bg-carbon-900 border border-carbon-800 p-6">
-                  <h2 className="text-xs font-semibold tracking-widest uppercase text-carbon-400 mb-5 flex items-center gap-2">
+                <div className="bg-gray-50 border border-gray-200 p-6">
+                  <h2 className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-5 flex items-center gap-2">
                     <MessageSquare size={12} />
                     Pourquoi nous choisir
                   </h2>
@@ -135,7 +132,7 @@ export default function ContactPage() {
                       "Suivi photos pendant la fabrication",
                       "Satisfait ou on reprend",
                     ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-carbon-400">
+                      <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
                         <span className="text-gold-500 mt-0.5 shrink-0">✓</span>
                         {item}
                       </li>
@@ -148,11 +145,11 @@ export default function ContactPage() {
             {/* Form */}
             <div className="lg:col-span-2">
               <AnimatedSection direction="right">
-                <div className="bg-carbon-900 border border-carbon-800 p-8 md:p-10">
-                  <h2 className="text-lg font-bold text-white mb-1">
+                <div className="bg-white border border-gray-200 p-8 md:p-10">
+                  <h2 className="text-lg font-bold text-zinc-900 mb-1">
                     Formulaire de devis
                   </h2>
-                  <p className="text-sm text-carbon-500 mb-8">
+                  <p className="text-sm text-gray-400 mb-8">
                     Tous les champs marqués * sont obligatoires.
                   </p>
                   <QuoteForm />
@@ -164,22 +161,22 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 border-t border-carbon-800">
+      <section className="py-20 border-t border-gray-200 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="text-2xl font-bold text-white mb-10 text-center">
+            <h2 className="text-2xl font-bold text-zinc-900 mb-10 text-center">
               Questions fréquentes
             </h2>
-            <div className="space-y-px bg-carbon-800">
+            <div className="space-y-px bg-gray-200">
               {faq.map((item) => (
                 <div
                   key={item.q}
-                  className="bg-carbon-950 p-6 hover:bg-carbon-900 transition-colors"
+                  className="bg-white p-6 hover:bg-gray-50 transition-colors"
                 >
-                  <h3 className="font-semibold text-white mb-2 text-sm">
+                  <h3 className="font-semibold text-zinc-900 mb-2 text-sm">
                     {item.q}
                   </h3>
-                  <p className="text-sm text-carbon-400 leading-relaxed">
+                  <p className="text-sm text-gray-500 leading-relaxed">
                     {item.a}
                   </p>
                 </div>

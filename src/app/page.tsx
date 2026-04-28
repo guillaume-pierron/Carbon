@@ -3,15 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   ArrowRight,
-  Layers,
-  Wrench,
-  Zap,
-  Sparkles,
   Shield,
   Clock,
-  ChevronRight,
+  Sparkles,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import HeroSection from "@/components/HeroSection";
 
 export const metadata: Metadata = {
   title: "B&B Carbon — Pièces en Fibre de Carbone Sur-Mesure",
@@ -21,28 +18,32 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Layers,
+    num: "01",
     title: "Création Sur-Mesure",
-    description:
-      "Fabrication de pièces carbone uniques selon vos spécifications exactes. Chaque projet est pensé et réalisé de A à Z.",
+    description: "Fabrication de pièces carbone uniques selon vos spécifications exactes. Chaque projet est pensé et réalisé de A à Z.",
+    image: "/volant_large.png",
+    href: "/services#creation",
   },
   {
-    icon: Wrench,
+    num: "02",
     title: "Réparation & Restauration",
-    description:
-      "Remise en état de vos pièces carbone existantes. Réparation de fissures, éclats, et défauts de surface.",
+    description: "Remise en état de vos pièces carbone existantes. Réparation de fissures, éclats, et défauts de surface.",
+    image: "/board.png",
+    href: "/services#reparation",
   },
   {
-    icon: Zap,
+    num: "03",
     title: "Recouvrement Carbone",
-    description:
-      "Habillage de vos pièces existantes avec du tissu carbone véritable. Transformation rapide et haute qualité.",
+    description: "Habillage de vos pièces existantes avec du tissu carbone véritable. Transformation rapide et haute qualité.",
+    image: "/volant.png",
+    href: "/services#recouvrement",
   },
   {
-    icon: Sparkles,
+    num: "04",
     title: "Custom & Objets Uniques",
-    description:
-      "Au-delà de l'auto : manettes, objets déco, accessoires. Tout ce qui peut être sublimé par le carbone.",
+    description: "Au-delà de l'auto : manettes, objets déco, accessoires. Tout ce qui peut être sublimé par le carbone.",
+    image: "/xbox.png",
+    href: "/services#custom",
   },
 ];
 
@@ -77,7 +78,7 @@ const previews = [
     title: "Habillage de volant",
     color: "from-zinc-900 to-zinc-800",
     accent: "from-gold-600 to-gold-400",
-    image: "/volant.png", // ← mets le nom de ton fichier ici
+    image: "/volant.png",
   },
   {
     cat: "Extérieur",
@@ -104,79 +105,12 @@ const previews = [
 
 export default function HomePage() {
   return (
-    <>
+    <div className="bg-white text-zinc-900">
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 carbon-texture" />
-        <div className="absolute inset-0 bg-gradient-to-b from-carbon-950/40 via-carbon-950/20 to-carbon-950" />
-
-        {/* Decorative lines */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 right-0 w-px h-48 bg-gradient-to-b from-transparent via-gold-500/30 to-transparent" />
-          <div className="absolute top-1/2 left-1/4 w-48 h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
-          <div className="absolute bottom-1/3 right-1/4 w-32 h-px bg-gradient-to-r from-transparent via-gold-500/15 to-transparent" />
-          <div
-            className="absolute -top-20 -right-20 w-96 h-96 rounded-full opacity-5"
-            style={{
-              background:
-                "radial-gradient(circle, #c9a84c 0%, transparent 70%)",
-            }}
-          />
-          <div
-            className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full opacity-5"
-            style={{
-              background:
-                "radial-gradient(circle, #c9a84c 0%, transparent 70%)",
-            }}
-          />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
-          <div className="max-w-4xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 border border-gold-500/30 bg-gold-500/5 px-4 py-2 mb-8">
-              <div className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-              <span className="text-xs tracking-widest uppercase text-gold-400 font-medium">
-                Fabrication artisanale · France
-              </span>
-            </div>
-
-            {/* Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-none mb-6">
-              <span className="block text-white">L'ART DU</span>
-              <span className="block text-gradient-gold">CARBONE</span>
-              <span className="block text-white">SUR-MESURE</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-carbon-300 max-w-xl leading-relaxed mb-10">
-              Pièces en fibre de carbone fabriquées à la main pour sublimer
-              votre automobile. Intérieur, extérieur, et objets uniques — chaque
-              réalisation est une signature.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="btn-primary">
-                Demander un Devis
-                <ArrowRight size={16} />
-              </Link>
-              <Link href="/realisations" className="btn-secondary">
-                Voir les Réalisations
-                <ChevronRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-carbon-500">
-          <span className="text-xs tracking-widest uppercase">Découvrir</span>
-          <div className="w-px h-12 bg-gradient-to-b from-carbon-500 to-transparent animate-pulse" />
-        </div>
-      </section>
+      <HeroSection />
 
       {/* STATS */}
-      <section className="bg-carbon-900 border-y border-carbon-800">
+      <section className="bg-gray-100 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
@@ -184,7 +118,7 @@ export default function HomePage() {
                 <div className="text-3xl md:text-4xl font-black text-gradient-gold mb-1">
                   {stat.value}
                 </div>
-                <div className="text-xs tracking-widest uppercase text-carbon-400">
+                <div className="text-xs tracking-widest uppercase text-gray-500">
                   {stat.label}
                 </div>
               </div>
@@ -194,15 +128,28 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES OVERVIEW */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+        {/* Logo décoratif en fond */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+          <Image
+            src="/logo_noir.svg"
+            alt=""
+            width={1200}
+            height={480}
+            className="w-full max-w-6xl px-8 opacity-[0.04] object-contain"
+            aria-hidden="true"
+          />
+        </div>
+        {/* Ligne décorative */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-gray-200 to-transparent" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <AnimatedSection>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
               <div>
                 <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-3 block">
                   Notre Expertise
                 </span>
-                <h2 className="section-title text-white">
+                <h2 className="section-title text-zinc-900">
                   Ce que nous
                   <br />
                   <span className="text-gradient-gold">fabriquons</span>
@@ -210,7 +157,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/services"
-                className="text-sm tracking-wider uppercase text-carbon-400 hover:text-gold-400 transition-colors flex items-center gap-2 group"
+                className="text-sm tracking-wider uppercase text-gray-500 hover:text-gold-500 transition-colors flex items-center gap-2 group"
               >
                 Tous les services
                 <ArrowRight
@@ -221,23 +168,36 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-carbon-800">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {services.map((service, i) => (
               <AnimatedSection key={service.title} delay={i * 100}>
-                <div className="bg-carbon-950 p-8 h-full group hover:bg-carbon-900 transition-colors duration-300">
-                  <div className="w-12 h-12 border border-gold-500/30 flex items-center justify-center mb-6 group-hover:border-gold-400 group-hover:bg-gold-500/5 transition-all duration-300">
-                    <service.icon
-                      size={20}
-                      className="text-gold-500 group-hover:text-gold-300 transition-colors"
+                <Link href={service.href} className="block group bg-white border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  {/* Image */}
+                  <div className="relative h-52 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="font-semibold text-white mb-3 tracking-wide">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-carbon-400 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+                  {/* Texte */}
+                  <div className="p-6">
+                    <span className="text-xs font-black text-gray-300 tracking-widest block mb-3">
+                      {service.num}
+                    </span>
+                    <h3 className="font-bold text-zinc-900 mb-2 tracking-wide">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+                    <div className="flex items-center gap-2 text-xs tracking-widest uppercase text-gray-400 group-hover:text-zinc-900 transition-colors duration-300">
+                      En savoir plus
+                      <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                  </div>
+                </Link>
               </AnimatedSection>
             ))}
           </div>
@@ -245,14 +205,14 @@ export default function HomePage() {
       </section>
 
       {/* PREVIEW GALLERY */}
-      <section className="py-24 bg-carbon-900/50">
+      <section className="py-24 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
               <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-3 block">
                 Nos Réalisations
               </span>
-              <h2 className="section-title text-white">
+              <h2 className="section-title text-zinc-900">
                 Quelques <span className="text-gradient-gold">projets</span>
               </h2>
             </div>
@@ -262,9 +222,8 @@ export default function HomePage() {
             {previews.map((item, i) => (
               <AnimatedSection key={item.title} delay={i * 120}>
                 <div
-                  className={`relative bg-gradient-to-br ${item.color} aspect-[4/3] overflow-hidden group cursor-pointer border border-carbon-800 hover:border-carbon-600 transition-all duration-500`}
+                  className={`relative bg-gradient-to-br ${item.color} aspect-[4/3] overflow-hidden group cursor-pointer border border-gray-300 hover:border-gray-400 transition-all duration-500`}
                 >
-                  {/* Image ou placeholder carbone */}
                   {item.image ? (
                     <Image
                       src={item.image}
@@ -284,12 +243,11 @@ export default function HomePage() {
                     </>
                   )}
 
-                  {/* Accent gradient overlay */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${item.accent} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-carbon-950/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="text-xs tracking-widest uppercase text-gold-400 font-medium">
                       {item.cat}
@@ -297,8 +255,7 @@ export default function HomePage() {
                     <p className="text-white font-semibold mt-1">{item.title}</p>
                   </div>
 
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-carbon-950/0 group-hover:bg-carbon-950/20 transition-all duration-300 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-zinc-950/0 group-hover:bg-zinc-950/20 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/20 px-4 py-2">
                       <span className="text-xs tracking-widest uppercase text-white">
                         Voir
@@ -322,7 +279,7 @@ export default function HomePage() {
       </section>
 
       {/* VALUES */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection direction="left">
@@ -330,20 +287,20 @@ export default function HomePage() {
                 <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-3 block">
                   Pourquoi B&B Carbon
                 </span>
-                <h2 className="section-title text-white mb-6">
+                <h2 className="section-title text-zinc-900 mb-6">
                   L'excellence
                   <br />
                   <span className="text-gradient-gold">artisanale</span>
                   <br />
                   au service de votre vision
                 </h2>
-                <p className="text-carbon-400 leading-relaxed mb-8">
+                <p className="text-gray-600 leading-relaxed mb-8">
                   Chez B&B Carbon, chaque projet est abordé comme une œuvre
                   unique. Nous combinons techniques de fabrication professionnelles
                   et attention au détail pour livrer des pièces qui dépassent les
                   attentes.
                 </p>
-                <Link href="/a-propos" className="btn-ghost">
+                <Link href="/a-propos" className="btn-ghost-light">
                   Notre Histoire
                   <ArrowRight size={14} />
                 </Link>
@@ -352,19 +309,19 @@ export default function HomePage() {
 
             <AnimatedSection direction="right">
               <div className="space-y-6">
-                {values.map((val, i) => (
+                {values.map((val) => (
                   <div
                     key={val.title}
-                    className="flex gap-5 p-6 border border-carbon-800 hover:border-carbon-700 bg-carbon-950 hover:bg-carbon-900 transition-all duration-300 group"
+                    className="flex gap-5 p-6 border border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50 transition-all duration-300 group"
                   >
-                    <div className="w-10 h-10 border border-gold-500/30 flex items-center justify-center shrink-0 group-hover:border-gold-400 transition-colors">
+                    <div className="w-10 h-10 border border-gold-500/40 flex items-center justify-center shrink-0 group-hover:border-gold-400 transition-colors">
                       <val.icon size={18} className="text-gold-500" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white mb-1">
+                      <h3 className="font-semibold text-zinc-900 mb-1">
                         {val.title}
                       </h3>
-                      <p className="text-sm text-carbon-400 leading-relaxed">
+                      <p className="text-sm text-gray-600 leading-relaxed">
                         {val.desc}
                       </p>
                     </div>
@@ -377,14 +334,12 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 carbon-texture" />
-        <div className="absolute inset-0 bg-gradient-to-b from-carbon-950/50 to-carbon-950/80" />
+      <section className="relative py-24 overflow-hidden bg-gray-100">
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-5"
           style={{
             background:
-              "radial-gradient(ellipse at center, #c9a84c 0%, transparent 70%)",
+              "radial-gradient(ellipse at center, #0f172a 0%, transparent 70%)",
           }}
         />
 
@@ -393,12 +348,12 @@ export default function HomePage() {
             <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-4 block">
               Commencez votre projet
             </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-900 mb-6">
               Votre projet,
               <br />
               <span className="text-gradient-gold">notre expertise</span>
             </h2>
-            <p className="text-carbon-300 text-lg leading-relaxed mb-10">
+            <p className="text-gray-600 text-lg leading-relaxed mb-10">
               Décrivez-nous votre idée. Véhicule, pièce, style — nous vous
               proposons une solution sur-mesure et un devis gratuit sous 48h.
             </p>
@@ -409,6 +364,6 @@ export default function HomePage() {
           </div>
         </AnimatedSection>
       </section>
-    </>
+    </div>
   );
 }

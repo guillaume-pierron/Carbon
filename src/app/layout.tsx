@@ -60,7 +60,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={inter.variable}>
-      <body className="bg-carbon-950 text-white antialiased">
+      <body className="bg-white text-zinc-900 antialiased">
         <Providers>
           <Navigation />
           <main>{children}</main>

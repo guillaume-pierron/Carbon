@@ -34,7 +34,6 @@ const services = [
       "Moulage sur pièce existante",
     ],
     examples: ["Tablette de bord", "Coques de rétroviseurs", "Spoilers", "Diffuseurs", "Montants A/B/C"],
-    accent: "or",
   },
   {
     id: "recouvrement",
@@ -53,7 +52,6 @@ const services = [
       "Délai rapide : 5–10 jours ouvrés",
     ],
     examples: ["Volants de direction", "Leviers de vitesse", "Planche de bord", "Accoudoirs", "Garnitures de portière"],
-    accent: "argent",
   },
   {
     id: "reparation",
@@ -72,7 +70,6 @@ const services = [
       "Garantie sur les travaux réalisés",
     ],
     examples: ["Carrosserie carbone", "Aileron endommagé", "Pièces fissurées", "Éclats de vernis", "Bulles sous vernis"],
-    accent: "or",
   },
   {
     id: "custom",
@@ -91,7 +88,6 @@ const services = [
       "Idéal pour cadeaux personnalisés",
     ],
     examples: ["Manette Xbox", "Casque moto", "Boîtier de montre", "Télécommandes", "Éléments de design intérieur"],
-    accent: "argent",
   },
 ];
 
@@ -122,21 +118,18 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 carbon-texture" />
-        <div className="absolute inset-0 bg-gradient-to-b from-carbon-950/60 to-carbon-950" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-4 block">
               Nos Services
             </span>
-            <h1 className="section-title text-white mb-6">
+            <h1 className="section-title text-zinc-900 mb-6">
               Expertise carbone
               <br />
               <span className="text-gradient-gold">complète</span>
             </h1>
-            <p className="section-subtitle text-carbon-400">
+            <p className="section-subtitle">
               De la création pure à la réparation, en passant par le recouvrement
               et le custom — B&B Carbon couvre tous vos besoins en fibre de carbone.
             </p>
@@ -145,34 +138,34 @@ export default function ServicesPage() {
       </section>
 
       {/* Services */}
-      <section className="py-12">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
           {services.map((service, i) => (
             <AnimatedSection key={service.id} delay={i * 80}>
               <div
                 id={service.id}
-                className="bg-carbon-900 border border-carbon-800 hover:border-carbon-700 transition-all duration-300 overflow-hidden group"
+                className="bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300 overflow-hidden group"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
                   {/* Left: Info */}
                   <div className="p-8 md:p-12">
                     <div className="flex items-center gap-4 mb-6">
-                      <span className="text-xs font-black text-gold-500/50 tracking-widest">
+                      <span className="text-xs font-black text-gold-500/60 tracking-widest">
                         {service.label}
                       </span>
-                      <div className="h-px w-12 bg-carbon-700" />
+                      <div className="h-px w-12 bg-gray-200" />
                       <div className="w-10 h-10 border border-gold-500/30 flex items-center justify-center group-hover:border-gold-400 transition-colors">
                         <service.icon size={18} className="text-gold-500" />
                       </div>
                     </div>
 
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">
+                    <h2 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-1">
                       {service.title}
                     </h2>
                     <p className="text-sm text-gold-500 tracking-wide mb-4">
                       {service.subtitle}
                     </p>
-                    <p className="text-carbon-400 leading-relaxed mb-8">
+                    <p className="text-gray-600 leading-relaxed mb-8">
                       {service.description}
                     </p>
 
@@ -183,8 +176,8 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Right: Features + Examples */}
-                  <div className="p-8 md:p-12 border-t lg:border-t-0 lg:border-l border-carbon-800 bg-carbon-950/50">
-                    <h3 className="text-xs font-semibold tracking-widest uppercase text-carbon-400 mb-5">
+                  <div className="p-8 md:p-12 border-t lg:border-t-0 lg:border-l border-gray-200 bg-gray-50">
+                    <h3 className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-5">
                       Ce que comprend le service
                     </h3>
                     <ul className="space-y-3 mb-8">
@@ -194,19 +187,19 @@ export default function ServicesPage() {
                             size={14}
                             className="text-gold-500 shrink-0 mt-0.5"
                           />
-                          <span className="text-sm text-carbon-300">{feat}</span>
+                          <span className="text-sm text-gray-600">{feat}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <h3 className="text-xs font-semibold tracking-widest uppercase text-carbon-400 mb-4">
+                    <h3 className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">
                       Exemples de pièces
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {service.examples.map((ex) => (
                         <span
                           key={ex}
-                          className="text-xs px-3 py-1 border border-carbon-700 text-carbon-400"
+                          className="text-xs px-3 py-1 border border-gray-200 text-gray-500 bg-white"
                         >
                           {ex}
                         </span>
@@ -221,29 +214,29 @@ export default function ServicesPage() {
       </section>
 
       {/* Process */}
-      <section className="py-24 md:py-32">
+      <section className="py-24 md:py-32 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
               <span className="text-xs tracking-widest uppercase text-gold-500 font-medium mb-3 block">
                 Comment ça marche
               </span>
-              <h2 className="section-title text-white">
+              <h2 className="section-title text-zinc-900">
                 Le processus en{" "}
                 <span className="text-gradient-gold">4 étapes</span>
               </h2>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-carbon-800">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200">
             {process.map((step, i) => (
               <AnimatedSection key={step.step} delay={i * 100}>
-                <div className="bg-carbon-950 p-8 h-full hover:bg-carbon-900 transition-colors group">
-                  <div className="text-5xl font-black text-carbon-800 group-hover:text-carbon-700 transition-colors mb-6">
+                <div className="bg-white p-8 h-full hover:bg-gray-50 transition-colors group">
+                  <div className="text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors mb-6">
                     {step.step}
                   </div>
-                  <h3 className="font-semibold text-white mb-3">{step.title}</h3>
-                  <p className="text-sm text-carbon-400 leading-relaxed">{step.desc}</p>
+                  <h3 className="font-semibold text-zinc-900 mb-3">{step.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -252,13 +245,13 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 border-t border-carbon-800">
+      <section className="relative py-20 border-t border-gray-200 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
               Prêt à démarrer ?
             </h2>
-            <p className="text-carbon-400 mb-8">
+            <p className="text-gray-500 mb-8">
               Envoyez-nous votre projet et obtenez un devis gratuit sous 48h.
             </p>
             <Link href="/contact" className="btn-primary">

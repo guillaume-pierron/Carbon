@@ -23,11 +23,11 @@ const config: Config = {
           950: "#0a0a0a",
         },
         gold: {
-          300: "#e8d080",
-          400: "#d4b84a",
-          500: "#c9a84c",
-          600: "#b8960c",
-          700: "#9a7d0a",
+          300: "#6b7280",
+          400: "#4b5563",
+          500: "#374151",
+          600: "#1f2937",
+          700: "#0f172a",
         },
       },
       fontFamily: {
@@ -52,8 +52,8 @@ const config: Config = {
           )
         `,
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-gold":
-          "linear-gradient(135deg, #c9a84c 0%, #e8d080 50%, #c9a84c 100%)",
+        "gradient-steel":
+          "linear-gradient(135deg, #1e293b 0%, #475569 50%, #1e293b 100%)",
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease-out forwards",

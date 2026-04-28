@@ -57,17 +57,15 @@ export default function BoutiquePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 carbon-texture" />
-        <div className="absolute inset-0 bg-gradient-to-b from-carbon-950/60 to-carbon-950" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-16 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 border border-gold-500/30 bg-gold-500/5 px-4 py-2 mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-            <span className="text-xs tracking-widest uppercase text-gold-400 font-medium">
+            <div className="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse" />
+            <span className="text-xs tracking-widest uppercase text-gold-600 font-medium">
               Stock disponible
             </span>
           </div>
-          <h1 className="section-title text-white mb-4">
+          <h1 className="section-title text-zinc-900 mb-4">
             La <span className="text-gradient-gold">Boutique</span>
           </h1>
           <p className="section-subtitle">
@@ -78,7 +76,7 @@ export default function BoutiquePage() {
       </section>
 
       {/* Products */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {products.map((product) => (
@@ -89,7 +87,7 @@ export default function BoutiquePage() {
       </section>
 
       {/* Info */}
-      <section className="py-16 border-t border-carbon-800">
+      <section className="py-16 border-t border-gray-200 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
@@ -107,10 +105,10 @@ export default function BoutiquePage() {
               },
             ].map((item) => (
               <div key={item.title} className="space-y-2">
-                <h3 className="text-sm tracking-widest uppercase text-gold-400 font-medium">
+                <h3 className="text-sm tracking-widest uppercase text-gold-500 font-medium">
                   {item.title}
                 </h3>
-                <p className="text-carbon-400 text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
